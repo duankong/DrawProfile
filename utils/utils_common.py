@@ -28,9 +28,7 @@ def calculate_delta_x(point1, point2):
     x1, y1 = point1
     x2, y2 = point2
     hypotenuse = np.sqrt(np.square(x1 - x2) + np.square(y1 - y2))
-    delta_x = abs(x1 - x2) / hypotenuse
-    num = np.ceil(abs(x1 - x2) / delta_x)
-    delta_x = abs(x1 - x2) / (num - 1)
+    delta_x = abs(x1 - x2) / np.round(hypotenuse)
     return delta_x
 
 
@@ -43,6 +41,9 @@ def rename_column(crf_index, file_index_):
     # return "crf_{}_{}".format(crf_index, os.path.basename(file_index_))
     return "crf_{}".format(crf_index)
 
+def watch_data(data):
+    for step,_ in enumerate(data):
+        print("{} {}".format(step,data[step]))
 
 if __name__ == '__main__':
     pass
