@@ -52,13 +52,11 @@ def calculate_coordinate_double_linear(point1, point2):
     delta_x = calculate_delta_x([x1, y1], [x2, y2])
 
     x_index_ = x1
-    while x_index_ - x2 < 1e-10:
+    while x_index_ - x2 < 1e-5:
         p1, p2, p3, p4, uv = get_four_point([x_index_, x_index_ * gradient + b])
         x_list.append([p1[0], p2[0], p3[0], p4[0], uv[0]])
         y_list.append([p1[1], p2[1], p3[1], p4[1], uv[1]])
         x_index_ += delta_x
-
-
 
     return x_list, y_list
 
