@@ -62,4 +62,5 @@ def psnr_calculate(mse):
 
 
 if __name__ == '__main__':
-    pass
+    mse=333.19
+    psnr_calculate(mse)

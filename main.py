@@ -177,8 +177,8 @@ if __name__ == '__main__':
     result_path = "C://Users//chenwu//Desktop//result_excel//"
 
     length = [20, 200]
-    num = [2000, 6000, 10000, 20000, 30000]
+    num = [10000, 10000, 10000, 120000]
     for num_index_ in num:
-        file = result_path + "[{},{}]_num_{}//".format(length[0], length[1], num_index_)
+        file = result_path + "[{},{}]_num_{}_rand_{}//".format(length[0], length[1], num_index_, np.random.rand())
         os.makedirs(file)
         rand_test_demo(file, num=num_index_, length=length)
